@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Kartička zákazníka</title>
@@ -16,24 +16,25 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Jan_Palach_foto_z_pr%C5%AFkazu.JPG" class="photo" alt="profilové foto"/>
         <div class="row">
             <span class="label">Jméno</span>
-            <span class="value">Jan</span>
+            <span class="value" th:text="${osoba.givenName}">Jan</span>
         </div>
         <div class="row">
             <span class="label">Příjmení</span>
-            <span class="value">Palach</span>
+            <span class="value" th:text="${osoba.surname}">Palach</span>
         </div>
         <div class="row">
             <span class="label">Datum narození</span>
-            <span class="value">11. 8. 1948</span>
+            <span class="value" th:text="${osoba.birthDate}">11. 8. 1948</span>
         </div>
         <div class="row">
             <span class="label">Věk</span>
-            <span class="value">72</span>
+            <span class="value" th:text="${osoba.age}">72</span>
         </div>
     </div>
     <div class="address">
-        <div class="address-line">Smetanova 337</div>
-        <div class="address-line"><span>27716</span> <span>Všetaty</span></div>
+        <div class="address-line" th:text="${adresa.street}">Smetanova 337</div>
+        <div class="address-line"><span th:text="${adresa.postalCode}">27716</span>
+            <span th:text="${adresa.locality}">Všetaty</span></div>
     </div>
 </div>
 </body>
